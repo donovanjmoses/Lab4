@@ -13,33 +13,62 @@ public class Lab4 {
 	public static void main(String[] args) {
 		
 		//Declare some variables you need
-		//
-		int option = 1;
-		Scanner choice = new Scanner(System.in);
+		int option;
+		Scanner scan = new Scanner(System.in);
 		do {
 			//display the menu
 			displayMenu();
-			option = choice.nextInt();
 			//Ask the user for one option
-			//
-			
-			switch (option){
-				//Define four cases for options. Don't forget "break".
+			option = scan.nextInt();
+			switch (option) {
+			//Define four cases for options. Don't forget "break".
 			case 1 :
-			
+				System.out.println("Enter integer 'm': ");
+				int m = scan.nextInt();
+				int finalInteger = 0;
+				for(int i = 1; i <= m; i++) {
+					finalInteger = finalInteger + i;
+					System.out.println(finalInteger);
+				}
 			break;
 			
-			default : 
-				
+			case 2 :
+				System.out.println("Enter a number: ");
+				int number = scan.nextInt();
+				System.out.println("The factorial of " + number + " is " + factorial(number));
+			break;
+			
+			case 3 :
+				System.out.println("Enter a number: ");
+				int firstDigit = scan.nextInt();
+				System.out.println("The leftmost digit of " + firstDigit + " is " + firstNumber(firstDigit));
+			break;
+			
+			case 4 :
+				System.out.print("Bye");
 			}
+			
+		
+				
 		}
-		while (option !=4);
+		while (option != 4);
+	}
+	
+	public static int factorial(int number) {
+		if (number==0)
+			return 1;
 		
-		
+		return number*factorial(number - 1);
+	}	
+	
+	public static int firstNumber(int firstDigit) {
+		while (firstDigit >= 10)
+			firstDigit /= 10;
+		return firstDigit;
+	}
 		/**
 		 * Print the menu
-		 */
-	}	
+		 */	
 	private static void displayMenu() {
 		Scanner enterNumber = new Scanner(System.in);
 		System.out.println("Please choose one option from the following menu: ");
