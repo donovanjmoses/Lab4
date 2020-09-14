@@ -3,7 +3,7 @@
 // FILENAME: LAB4.JAVA
 // SPECIFICATION: A PROGRAM THAT PROMPTS THE USER TO CHOOSE A MENU OPTION THAT PERFORMS ARITHMETIC OPERATIONS
 // FOR: CSE110
-// TIME SPENT:
+// TIME SPENT: 120 minutes
  ----------------------------*/
 
 //Import Scanner Class
@@ -46,14 +46,15 @@ public class Lab4 {
 			
 			case 4 :
 				System.out.print("Bye");
+			break;
+			default :
+				displayMenu();
 			}
-			
-		
-				
 		}
 		while (option != 4);
 	}
 	
+	//static method, factorial, calculates the factorial of a given integer input
 	public static int factorial(int number) {
 		if (number==0)
 			return 1;
@@ -61,11 +62,13 @@ public class Lab4 {
 		return number*factorial(number - 1);
 	}	
 	
+	//static method, firstNumber, returns the first digit in a given integer input
 	public static int firstNumber(int firstDigit) {
 		while (firstDigit >= 10)
 			firstDigit /= 10;
 		return firstDigit;
 	}
+	
 		/**
 		 * Print the menu
 		 */	
